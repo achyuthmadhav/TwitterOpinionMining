@@ -26,23 +26,13 @@ public class TweetSample
        String accessTokenSecret = "GGgbfTJuogLQPhHNWbsfCeOhwlps7C80Q7J1FcQxQ7wvU"; /*enter your twitter secret token */
         AccessToken oathAccessToken = new AccessToken(accessToken, accessTokenSecret);
        twitter.setOAuthAccessToken(oathAccessToken);
-        Query query = new Query("Federer");
+        Query query = new Query("Trump");
         query.setCount(100);
         query.setLang("en");
-       // query.setSince("2018-01-27");
-        /*File file = new File("rftweets.txt");
-        FileWriter f = null;
-        try {
-			 f = new FileWriter(file);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
         QueryResult result = null;
         try {
 			result = twitter.search(query);
 		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         List<Status> list = result.getTweets();
